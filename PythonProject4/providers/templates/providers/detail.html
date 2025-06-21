@@ -1,0 +1,20 @@
+{% extends 'providers/base.html' %}
+{% block content %}
+<h2>Provider Detail</h2>
+<table class="table table-bordered">
+  <tr><th>NPI</th><td>{{ provider.npi }}</td></tr>
+  <tr><th>Name</th><td>{{ provider.last_name }}, {{ provider.first_name }} {% if provider.middle_name %}{{ provider.middle_name }}{% endif %}</td></tr>
+  <tr><th>Credential</th><td>{{ provider.credential }}</td></tr>
+  <tr><th>Gender</th><td>{{ provider.gender }}</td></tr>
+  <tr><th>Profession</th><td>{{ provider.taxonomy.classification }}</td></tr>
+  <tr><th>Specialization</th><td>{{ provider.taxonomy.specialization }}</td></tr>
+  <tr><th>Address</th><td>
+    {{ provider.address_line1 }}<br>
+    {% if provider.address_line2 %}{{ provider.address_line2 }}<br>{% endif %}
+    {{ provider.city }}, {{ provider.state }} {{ provider.postal_code }}
+  </td></tr>
+  <tr><th>Phone</th><td>{{ provider.phone }}</td></tr>
+  {% if provider.fax %}<tr><th>Fax</th><td>{{ provider.fax }}</td></tr>{% endif %}
+</table>
+<a href="{% url 'provider-search' %}" class="btn btn-secondary">Back to search</a>
+{% endblock %}
