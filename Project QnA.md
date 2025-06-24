@@ -1,4 +1,6 @@
 ** This project currently assumes each provider has only 1 taxonomy code
+
+
 changes needed: - update clean_npi.py to include 14 other taxonomy code columns 
                  - update tables accordingly**
 
