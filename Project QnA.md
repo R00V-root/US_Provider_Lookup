@@ -5,6 +5,6 @@
                  - update tables accordingly**
 
 
-###Data process:
+##Data process:
 
 the data flow goes: CSV files on disk → PostgreSQL staging table (via COPY command) → Real PostgreSQL tables (via INSERT with data cleaning) → Django queries this data → Converts to JSON or HTML depending on what's requested.
